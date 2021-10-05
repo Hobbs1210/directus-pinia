@@ -1,0 +1,36 @@
+{
+    "name": "directus-pinia",
+    "version": "0.1.0",
+    "types": "src/",
+    "scripts": {
+        "build": "vue-tsc --noEmit",
+        "prepare": "npm run test && npm run build",
+        "test": "jest",
+        "publish": "git push origin --tags && git push origin",
+        "release:pre": "npm version prerelease && npm publish --tag pre",
+        "release:patch": "npm version patch && npm publish",
+        "release:minor": "npm version minor && npm publish",
+        "release:major": "npm version major && npm publish"
+    },
+    "dependencies": {
+      "@directus/sdk": "^9.0.0-rc.95",
+      "bson-objectid": "^2.0.1",
+      "fast-copy": "^2.1.1",
+      "fast-json-stable-stringify": "^2.1.0",
+      "lodash": "^4.17.21"
+    },
+    "devDependencies": {
+       "@types/jest": "^27.0.1",
+       "@types/lodash": "^4.14.172",
+       "@types/node": "^16.7.4",
+       "jest": "^27.1.0",
+       "path": "^0.12.7",
+       "pinia": "^2.0.0-rc.11",
+       "ts-jest": "^27.0.5",
+       "ts-node-dev": "1.1.8",
+       "typescript": "^4.4.2",
+       "vue": "^3.2.19",
+       "vue-tsc": "^0.3.0"
+    }
+  }
+  
