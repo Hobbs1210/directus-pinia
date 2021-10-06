@@ -15,7 +15,7 @@
     "main": "dist/",
     "types": "src/",
     "scripts": {
-        "prepublish": "npm run compile",
+        "build": "vue-tsc --noEmit",
         "prepare": "npm run test && npm run build",
         "test": "jest",
         "publish": "git push origin --tags && git push origin"
