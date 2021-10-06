@@ -1,5 +1,6 @@
-import { Params } from '../types'
-import { ID } from '@directus/sdk'
+import { Params,Temp, Clone,Paginated} from '../types'
+import { ID ,Item,IItems} from '@directus/sdk'
+import { StateTree, GettersTree, Store, DefineStoreOptions } from 'pinia'
 
 export type AnyData = { [key: string]: any }
 
@@ -20,10 +21,20 @@ interface ModelPendingState {
     get?: boolean
 }
 
+export type ServiceStore = Store<string, ServiceState, ServiceGetters, ServiceActions>
+export type ServiceStoreOptions = DefineStoreOptions<string, ServiceState, ServiceGetters, ServiceActions>
+
 export type RequestType = 'find' | 'count' | 'get' | 'patch' | 'update' | 'remove'
 
-export interface ServiceGetters {
+export interface ServiceGetters extends GettersTree<ServiceState> {
   [k: string]: any
+  service: () => IItems<Item>
+  items: () => Item[]
+  temps: () => Temp[]
+  clones: () => Clone[]
+  //findInStore: () => ((params: Params) => Paginated<any>)
+  //countInStore: () => ((params: Params) => number)
+  //getFromStore: () => ((id: ID, params?: Params) => Item | Temp | Clone)
 }
 export interface ServiceActions {
   [k: string]: any
@@ -146,7 +157,7 @@ export interface Model {
     reset(): this
 }
 
-export interface ServiceState<M extends Model = Model> {
+export interface ServiceState<M extends Model = Model> extends StateTree {
     clientAlias: string
     servicePath: string
     pagination: {

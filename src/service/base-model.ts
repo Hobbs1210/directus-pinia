@@ -1,11 +1,12 @@
-import { AnyData, ModelInstanceOptions } from './types'
+import { AnyData, ModelInstanceOptions,ServiceStore } from './types'
 import { models } from '../models'
+import { Pinia } from 'pinia'
 
 export class BaseModel {
-    static store = null
-    static pinia = null
-    static servicePath = null
-    static idField = ''
+    static store:ServiceStore
+    static pinia:Pinia 
+    static servicePath:string
+    static idField: string 
 
     public __isClone!: boolean
 
