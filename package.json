@@ -12,6 +12,7 @@
     "main": "dist/",
     "types": "src/",
     "scripts": {
+        "compile": "vue-tsc --noEmit",
         "build": "vue-tsc --noEmit",
         "prepare": "npm run test && npm run build",
         "test": "jest",
