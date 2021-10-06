@@ -1,16 +1,27 @@
 {
     "name": "directus-pinia",
-    "version": "0.1.0",
+    "version": "0.1.1",
+    "keywords": [
+    "directus"
+    ],
+    "license": "MIT",
+    "repository": {
+    "type": "git",
+    "url": "git://github.com/Hobbs1210/directus-pinia.git"
+    },
+    "engines": {
+    "node": ">= 12"
+    },
+    "main": "dist/",
     "types": "src/",
     "scripts": {
-        "build": "vue-tsc --noEmit",
+        "prepublish": "npm run compile",
         "prepare": "npm run test && npm run build",
         "test": "jest",
-        "publish": "git push origin --tags && git push origin",
-        "release:pre": "npm version prerelease && npm publish --tag pre",
-        "release:patch": "npm version patch && npm publish",
-        "release:minor": "npm version minor && npm publish",
-        "release:major": "npm version major && npm publish"
+        "publish": "git push origin --tags && git push origin"
+    },
+    "publishConfig": {
+    "access": "public"
     },
     "dependencies": {
       "@directus/sdk": "^9.0.0-rc.95",
