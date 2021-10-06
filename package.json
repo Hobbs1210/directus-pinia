@@ -1,19 +1,27 @@
 {
     "name": "directus-pinia",
-    "version": "0.1.3",
+    "version": "0.1.2",
     "keywords": [
-    "directus"
+    "directus",
+    "pinia"
     ],
     "license": "MIT",
     "repository": {
     "type": "git",
     "url": "git://github.com/Hobbs1210/directus-pinia.git"
     },
-    "main": "dist/",
+    "main": "./dist/directus-pinia.umd.js",
+    "module": "./dist/directus-pinia.es.js",
+    "exports": {
+      ".": {
+        "import": "./dist/feathers-pinia.es.js",
+        "require": "./dist/feathers-pinia.umd.js"
+      }
+    },
     "types": "src/",
     "scripts": {
-        "compile": "vue-tsc --noEmit",
-        "build": "vue-tsc --noEmit",
+        "dev": "vite",
+        "build": "vue-tsc --noEmit && vite build",
         "prepare": "npm run test && npm run build",
         "test": "jest",
         "publish": "git push origin --tags && git push origin"
@@ -31,13 +39,15 @@
     "devDependencies": {
        "@types/jest": "^27.0.1",
        "@types/lodash": "^4.14.172",
-       "@types/node": "^16.7.4",
+       "@types/node": "^16.10.3",
+       "@vitejs/plugin-vue": "^1.6.0",
        "jest": "^27.1.0",
        "path": "^0.12.7",
        "pinia": "^2.0.0-rc.11",
        "ts-jest": "^27.0.5",
        "ts-node-dev": "1.1.8",
        "typescript": "^4.4.2",
+       "vite": "^2.5.1",
        "vue": "^3.2.19",
        "vue-tsc": "^0.3.0"
     }

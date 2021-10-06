@@ -4,13 +4,14 @@
 		"esModuleInterop": true,
 		"target": "ES2019",
 		"moduleResolution": "node",
-		"sourceMap": false,
+		"sourceMap": true,
 		"outDir": "dist",
 		"rootDir": "src",
 		"strict": true,
 		"lib": ["es2019"],
 		"skipLibCheck": true,
 		"declaration": true,
+		"types": ["vite/client", "node", "jest"],
 		"resolveJsonModule": true
     },
     "include": [
