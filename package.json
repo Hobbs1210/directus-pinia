@@ -9,9 +9,6 @@
     "type": "git",
     "url": "git://github.com/Hobbs1210/directus-pinia.git"
     },
-    "engines": {
-    "node": ">= 12"
-    },
     "main": "dist/",
     "types": "src/",
     "scripts": {
