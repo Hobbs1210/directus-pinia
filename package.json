@@ -14,8 +14,8 @@
     "module": "./dist/directus-pinia.es.js",
     "exports": {
       ".": {
-        "import": "./dist/feathers-pinia.es.js",
-        "require": "./dist/feathers-pinia.umd.js"
+        "import": "./dist/directus-pinia.es.js",
+        "require": "./dist/directus-pinia.umd.js"
       }
     },
     "types": "src/",
